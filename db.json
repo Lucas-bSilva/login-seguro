@@ -1,0 +1,9 @@
+{
+  "users": {
+    "lucas silva ": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$8IRTFbPz1fe6LytMCjRGHA$IV7edyAFujykQvrpQv4ac2c/0p/heuZlR71w2G07cFM",
+      "failed": 0,
+      "lock_until": 1756672199
+    }
+  }
+}

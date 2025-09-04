@@ -1,81 +1,55 @@
-# main.py — Menu interativo de Login Seguro
-import time
-from security import hash_password, verify_password
-from storage import load_db, save_db, create_user, get_user, set_password, mark_fail, reset_fail
+# main.py — Menu interativo de Login Seguro com cores
+from app import register_user, login_user, change_password, list_users
+from colorama import Fore, Style, init
 
-MAX_ATTEMPTS = 3
-LOCK_SECONDS = 30
+# Inicializa o Colorama
+init(autoreset=True)
 
-def register():
-    db = load_db()
-    username = input("Digite o nome de usuário: ")
-    if get_user(db, username):
-        print("⚠ Usuário já existe. Escolha outro.")
-        return
-    password = input("Digite a senha: ")
-    hpwd = hash_password(password)
-    create_user(db, username, hpwd)
-    save_db(db)
-    print(f"✅ Usuário {username} criado com sucesso.\n")
-
-def login():
-    db = load_db()
-    username = input("Digite o nome de usuário: ")
-    u = get_user(db, username)
-    if not u:
-        print("⚠ Usuário não existe.\n")
-        return
-    now = int(time.time())
-    if u["lock_until"] and now < u["lock_until"]:
-        print(f"⛔ Conta bloqueada. Tente novamente em {u['lock_until']-now}s.\n")
-        return
-
-    password = input("Digite a senha: ")
-    if verify_password(u["password_hash"], password):
-        reset_fail(db, username)
-        save_db(db)
-        print("✅ Login bem-sucedido!\n")
-    else:
-        mark_fail(db, username, MAX_ATTEMPTS, LOCK_SECONDS)
-        save_db(db)
-        print("❌ Senha incorreta.\n")
-
-def change_password():
-    db = load_db()
-    username = input("Digite o nome de usuário: ")
-    u = get_user(db, username)
-    if not u:
-        print("⚠ Usuário não existe.\n")
-        return
-    current = input("Digite a senha atual: ")
-    if not verify_password(u["password_hash"], current):
-        print("❌ Senha atual incorreta.\n")
-        return
-    new = input("Digite a nova senha: ")
-    set_password(db, username, hash_password(new))
-    save_db(db)
-    print("✅ Senha alterada com sucesso.\n")
-
-def main():
+def menu():
     while True:
-        print("=== MENU LOGIN SEGURO ===")
-        print("1. Registrar novo usuário")
-        print("2. Fazer login")
-        print("3. Alterar senha")
-        print("4. Sair")
-        choice = input("Escolha uma opção: ")
+        print(Fore.CYAN + "\n=== MENU LOGIN SEGURO ===")
+        print(Fore.YELLOW + "1. Registrar novo usuário")
+        print(Fore.YELLOW + "2. Fazer login")
+        print(Fore.YELLOW + "3. Alterar senha")
+        print(Fore.YELLOW + "4. Listar usuários")
+        print(Fore.YELLOW + "5. Sair")
+
+        choice = input(Fore.CYAN + "Escolha uma opção: " + Style.RESET_ALL)
 
         if choice == "1":
-            register()
+            user = input("Usuário: ")
+            pwd = input("Senha: ")
+            ok, msg = register_user(user, pwd)
+            print(Fore.GREEN + msg if ok else Fore.RED + msg)
+
         elif choice == "2":
-            login()
+            user = input("Usuário: ")
+            pwd = input("Senha: ")
+            ok, msg = login_user(user, pwd)
+            print(Fore.GREEN + msg if ok else Fore.RED + msg)
+
         elif choice == "3":
-            change_password()
+            user = input("Usuário: ")
+            current = input("Senha atual: ")
+            new = input("Nova senha: ")
+            ok, msg = change_password(user, current, new)
+            print(Fore.GREEN + msg if ok else Fore.RED + msg)
+
         elif choice == "4":
-            print("👋 Encerrando...")
+            users = list_users()
+            if users:
+                print(Fore.CYAN + "\n👥 Usuários cadastrados:")
+                for u in users:
+                    print(Fore.WHITE + f"- {u}")
+            else:
+                print(Fore.RED + "⚠ Nenhum usuário cadastrado.")
+
+        elif choice == "5":
+            print(Fore.MAGENTA + "👋 Encerrando...")
             break
+
         else:
-            print("Opção inválida.\n")
+            print(Fore.RED + "⚠ Opção inválida.")
 
 if __name__ == "__main__":
-    main()
+    menu()

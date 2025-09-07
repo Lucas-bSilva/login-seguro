@@ -1,27 +1,33 @@
-# 🔐 Projeto 1 – Login Seguro
+# 🔐 Projeto – Login Seguro
 
 ## 📖 Descrição
-O Projeto 1 – Login Seguro tem como objetivo implementar um sistema de autenticação de usuários utilizando técnicas de segurança estudadas na disciplina de Segurança Computacional. As senhas não são armazenadas em texto puro, mas sim através de hashing criptográfico com a biblioteca `bcrypt`, que aplica um algoritmo de derivação de chave com sal integrado. Essa abordagem garante maior proteção mesmo em cenários de vazamento de credenciais.  
+O Login Seguro é um sistema de autenticação de usuários desenvolvido em Python como parte da disciplina de Segurança Computacional.
+O projeto aplica boas práticas de segurança, como armazenamento de senhas com hashing criptográfico (bcrypt), garantindo que nenhuma senha seja armazenada em texto puro. Além disso, conta com bloqueio temporário automático após três tentativas consecutivas de login incorretas, protegendo contra ataques de força bruta.
 
-O sistema também implementa mecanismos de controle de acesso contra ataques de força bruta. O usuário possui no máximo três tentativas consecutivas de login; em caso de falha, sua conta é temporariamente bloqueada, reforçando a segurança do processo de autenticação. Dessa forma, o projeto alia teoria e prática, apresentando um exemplo funcional de boas práticas em autenticação e proteção de credenciais.  
-
----
-
-## ⚙️ Requisitos
-- Python **3.10+**
-- Pip atualizado
-- Biblioteca `bcrypt`
+O sistema oferece um menu interativo no terminal, permitindo o gerenciamento de usuários de forma simples e segura. Ele é um exemplo prático de como técnicas de segurança vistas na disciplina podem ser aplicadas em implementações reais. 
 
 ---
 
-## 📦 Instalação
+# ⚙️ Requisitos
+
+Python 3.10+
+
+Pip atualizado
+
+Bibliotecas listadas em requirements.txt:
+
+bcrypt
+
+colorama
+
+# 📦 Instalação
 Na raiz do projeto, execute:
-```bash
 pip install -r requirements.txt
+
 
 ▶️ Como executar
 
-No terminal, dentro da pasta login-seguro, rode:
+No terminal, dentro da pasta do projeto, rode:
 
 python main.py
 
@@ -31,29 +37,51 @@ Será exibido o menu interativo:
 1. Registrar novo usuário
 2. Fazer login
 3. Alterar senha
-4. Sair
+4. Listar usuários
+5. Excluir usuário
+6. Excluir todos os usuários
+7. Sair
 
 🛠️ Funcionalidades
 
 1 - Registrar usuário
-Cria um novo cadastro, impedindo a duplicação de nomes de usuário.
+
+Cria um novo cadastro, impedindo duplicação de nomes.
 
 2 - Login
-Valida o usuário e a senha, bloqueando a conta após três falhas consecutivas.
+
+Valida o usuário e a senha.
+
+Em caso de 3 erros consecutivos, o login é bloqueado temporariamente.
 
 3 - Alterar senha
-Permite a troca de senha mediante a verificação da senha atual.
 
-4 - Sair
+Permite trocar a senha apenas mediante validação da senha atual.
+
+4 - Listar usuários
+
+Mostra todos os usuários cadastrados no sistema.
+
+5 - Excluir usuário
+
+Remove um usuário específico do banco de dados.
+
+6 - Excluir todos os usuários
+
+Limpa completamente o banco de usuários.
+
+7 - Sair
+
 Encerra a execução do sistema.
 
 
 📂 Estrutura do projeto
 
 login-seguro/
-│-- app.py          # Funções principais de cadastro, login e troca de senha
-│-- security.py     # Módulo responsável pelo hashing e verificação de senhas
-│-- storage.py      # Armazenamento simples em JSON
-│-- main.py         # Interface de menu interativo para o usuário
-│-- requirements.txt# Dependências do projeto
-│-- README.md       # Documentação do projeto
+│-- app.py                # Funções principais (cadastro, login, senha, exclusão, listagem)
+│-- security.py           # Hashing e verificação de senhas
+│-- storage.py            # Armazenamento simples em JSON
+│-- main.py               # Menu interativo colorido no terminal
+│-- requirements.txt      # Dependências do projeto
+│-- README.md             # Documentação do projeto
+

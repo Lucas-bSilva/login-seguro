@@ -50,6 +50,13 @@ def login_user(username: str, password: str):
         # Incrementa contador de falhas e aplica bloqueio se necessário
         mark_fail(db, username, MAX_ATTEMPTS, LOCK_SECONDS)
         save_db(db)
+
+        # Recarrega o usuário após a tentativa para verificar se foi bloqueado
+        u = get_user(db, username)
+        now = int(time.time())
+        if u["lock_until"] and now < u["lock_until"]:
+            return False, f"⛔ Conta bloqueada. Tente novamente em {u['lock_until']-now}s."
+        
         return False, "❌ Senha incorreta."
 
 def change_password(username: str, current: str, new: str):

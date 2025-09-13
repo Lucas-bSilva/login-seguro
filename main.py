@@ -1,25 +1,37 @@
-# main.py — Menu interativo de Login Seguro com cores
-# Este arquivo implementa o menu principal do sistema Login Seguro,
-# permitindo que o usuário interaja com as funcionalidades disponíveis.
+# Arquivo implementa o menu principal do sistema Login Seguro,
+# Permite que o usuário interaja com as funcionalidades disponíveis.
+# Técnica principal: hashing criptográfico com bcrypt, que transforma as senhas em valores irreversíveis e únicos 
+# (mesmo que duas pessoas usem a mesma senha, os resultados ficam diferentes por conta do sal). 
+# Evita que senhas fiquem expostas em caso de vazamento do banco de dados.
+# O sistema conta com um mecanismo de bloqueio temporário após múltiplas tentativas falhas de login (account lockout), 
+# protegendo contra ataques de força bruta (quando alguém tenta adivinhar a senha testando várias combinações).
 
-from app import register_user, login_user, change_password, list_users, delete_user, delete_all_users
+from app import (
+    register_user, login_user, change_password,
+    list_users, delete_user, delete_all_users,
+    list_password_hashes
+)
 from colorama import Fore, Style, init
 
 # Inicializa o Colorama para permitir uso de cores no terminal
 init(autoreset=True)
 
+# Nome fictício da empresa de TI focada em segurança
+COMPANY_NAME = "Soluções em Segurança da Informação"
+
 def menu():
     # Loop principal do menu (executa até o usuário escolher sair)
     while True:
-        # Exibição do menu com cores
-        print(Fore.CYAN + "\n=== MENU LOGIN SEGURO ===")
+        # Exibição do menu com cores + nome da empresa
+        print(Fore.CYAN + f"\n=== MENU LOGIN SEGURO - {COMPANY_NAME} ===")
         print(Fore.YELLOW + "1. Registrar novo usuário")
         print(Fore.YELLOW + "2. Fazer login")
         print(Fore.YELLOW + "3. Alterar senha")
         print(Fore.YELLOW + "4. Listar usuários")
         print(Fore.YELLOW + "5. Excluir usuário")
         print(Fore.YELLOW + "6. Excluir todos os usuários")
-        print(Fore.YELLOW + "7. Sair")
+        print(Fore.YELLOW + "7. Mostrar senhas criptografadas")
+        print(Fore.YELLOW + "8. Sair")
 
         # Captura da opção escolhida
         choice = input(Fore.CYAN + "Escolha uma opção: " + Style.RESET_ALL)
@@ -27,8 +39,9 @@ def menu():
         # 1 - Registro de novo usuário
         if choice == "1":
             user = input("Usuário: ")
+            cargo = input("Cargo na empresa: ")
             pwd = input("Senha: ")
-            ok, msg = register_user(user, pwd)
+            ok, msg = register_user(user, pwd, cargo)
             print(Fore.GREEN + msg if ok else Fore.RED + msg)
 
         # 2 - Login de usuário
@@ -51,8 +64,8 @@ def menu():
             users = list_users()
             if users:
                 print(Fore.CYAN + "\n👥 Usuários cadastrados:")
-                for u in users:
-                    print(Fore.WHITE + f"- {u}")
+                for u, cargo in users:
+                    print(Fore.WHITE + f"- {u} ({cargo})")
             else:
                 print(Fore.RED + "⚠ Nenhum usuário cadastrado.")
 
@@ -71,9 +84,19 @@ def menu():
             else:
                 print(Fore.YELLOW + "⚠ Operação cancelada.")
 
-        # 7 - Encerrar o programa
+        # 7 - Mostrar as senhas criptografadas (apenas para demonstração)
         elif choice == "7":
-            print(Fore.MAGENTA + "👋 Encerrando...")
+            hashes = list_password_hashes()
+            if hashes:
+                print(Fore.CYAN + "\n🔐 Senhas criptografadas (hashes):")
+                for user, h in hashes:
+                    print(Fore.WHITE + f"- {user}: {h}")
+            else:
+                print(Fore.RED + "⚠ Nenhum usuário cadastrado.")
+
+        # 8 - Encerrar o programa
+        elif choice == "8":
+            print(Fore.MAGENTA + f"👋 Encerrando o sistema da {COMPANY_NAME}...")
             break
 
         # Opção inválida

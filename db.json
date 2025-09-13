@@ -1,3 +1,16 @@
 {
-  "users": {}
+  "users": {
+    "lucasdev": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$VpRXHtAheQbn3uRHq2QfTw$zpgMla6NXioP4cIkAismbC5MbLwzE2eOLVRq70tOoUU",
+      "cargo": "dev backend",
+      "failed": 0,
+      "lock_until": 1757798969
+    },
+    "pedroFront": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$81/KzdXNpOVjVw4Sv17S7Q$qGYZlu2q32w4uX7yMYMqWDvoVhpB8NH4dJfDjsYIn2E",
+      "cargo": "Frontend",
+      "failed": 0,
+      "lock_until": 0
+    }
+  }
 }

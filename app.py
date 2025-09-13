@@ -10,19 +10,21 @@ from storage import load_db, save_db, create_user, get_user, set_password, mark_
 MAX_ATTEMPTS = 3   # número máximo de tentativas falhas antes de bloquear o login
 LOCK_SECONDS = 30  # tempo de bloqueio (em segundos) após atingir o limite de falhas
 
-def register_user(username: str, password: str):
+def register_user(username: str, password: str, cargo: str):
     """
     Registra um novo usuário no sistema, desde que ele ainda não exista.
-    - Recebe nome de usuário e senha em texto puro.
+    - Recebe nome de usuário, senha e cargo.
     - Converte a senha em hash seguro antes de salvar.
     """
     db = load_db()
     if get_user(db, username):
         return False, "⚠ Usuário já existe."
     hpwd = hash_password(password)
-    create_user(db, username, hpwd)
+
+    # Adiciona também o campo 'cargo' no registro do usuário
+    create_user(db, username, hpwd, cargo)
     save_db(db)
-    return True, f"✅ Usuário {username} criado com sucesso."
+    return True, f"✅ Usuário {username} ({cargo}) criado com sucesso."
 
 def login_user(username: str, password: str):
     """
@@ -79,10 +81,18 @@ def change_password(username: str, current: str, new: str):
 def list_users():
     """
     Lista todos os usuários cadastrados no banco de dados.
-    Retorna uma lista com os nomes.
+    Retorna uma lista de tuplas (nome, cargo).
     """
     db = load_db()
-    return list(db["users"].keys())
+    return [(u, data.get("cargo", "Não informado")) for u, data in db["users"].items()]
+
+def list_password_hashes():
+    """
+    Lista os usuários e suas senhas criptografadas (hashes).
+    Usado apenas para fins de demonstração.
+    """
+    db = load_db()
+    return [(u, data["password_hash"]) for u, data in db["users"].items()]
 
 def delete_user(username: str):
     """

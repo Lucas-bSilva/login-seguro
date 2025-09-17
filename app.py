@@ -4,16 +4,19 @@
 
 import time
 from security import hash_password, verify_password
-from storage import load_db, save_db, create_user, get_user, set_password, mark_fail, reset_fail
+from storage import (
+    load_db, save_db, create_user, get_user,
+    set_password, mark_fail, reset_fail
+)
 
 # Configurações globais do sistema de login
 MAX_ATTEMPTS = 3   # número máximo de tentativas falhas antes de bloquear o login
 LOCK_SECONDS = 30  # tempo de bloqueio (em segundos) após atingir o limite de falhas
 
-def register_user(username: str, password: str, cargo: str):
+def register_user(username: str, password: str, cargo: str, email: str):
     """
     Registra um novo usuário no sistema, desde que ele ainda não exista.
-    - Recebe nome de usuário, senha e cargo.
+    - Recebe nome de usuário, senha, cargo e email.
     - Converte a senha em hash seguro antes de salvar.
     """
     db = load_db()
@@ -21,8 +24,8 @@ def register_user(username: str, password: str, cargo: str):
         return False, "⚠ Usuário já existe."
     hpwd = hash_password(password)
 
-    # Adiciona também o campo 'cargo' no registro do usuário
-    create_user(db, username, hpwd, cargo)
+    # Cria usuário com cargo e email
+    create_user(db, username, hpwd, cargo, email)
     save_db(db)
     return True, f"✅ Usuário {username} ({cargo}) criado com sucesso."
 
@@ -81,10 +84,11 @@ def change_password(username: str, current: str, new: str):
 def list_users():
     """
     Lista todos os usuários cadastrados no banco de dados.
-    Retorna uma lista de tuplas (nome, cargo).
+    Retorna uma lista de tuplas (nome, cargo, email).
     """
     db = load_db()
-    return [(u, data.get("cargo", "Não informado")) for u, data in db["users"].items()]
+    return [(u, data.get("cargo", "Não informado"), data.get("email", "Não informado"))
+            for u, data in db["users"].items()]
 
 def list_password_hashes():
     """

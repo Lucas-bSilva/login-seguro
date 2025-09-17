@@ -1,14 +1,58 @@
 {
   "users": {
-    "lucasdev": {
-      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$VpRXHtAheQbn3uRHq2QfTw$zpgMla6NXioP4cIkAismbC5MbLwzE2eOLVRq70tOoUU",
-      "cargo": "dev backend",
+    "joao.silva": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$m6JBwjjVMpWWdqtRJ3kQGg$WOYFMa0KhIw93f/svLrzxnUKIS4ainYf3VfYIdBOGKs",
+      "cargo": "Analista de Segurança da Informação",
+      "email": "joao.silva@protectisolutions.com.br",
       "failed": 0,
-      "lock_until": 1757798969
+      "lock_until": 0
     },
-    "pedroFront": {
-      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$81/KzdXNpOVjVw4Sv17S7Q$qGYZlu2q32w4uX7yMYMqWDvoVhpB8NH4dJfDjsYIn2E",
-      "cargo": "Frontend",
+    "maria.oliveira": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$1Ws0mLGLrOpDMg6ptchW9Q$F+nx0Hxex8w5heys2Owl+GI9yrVvHMQcsUMiXO+bAas",
+      "cargo": "Desenvolvedora Backend",
+      "email": "maria.oliveira@protectisolutions.com.br",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "carlos.santos": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$TlT93IG+r2KEPDaozSMKMw$ijTcQiSElby7e3/4VlL7Iqt8a+C0OEXwnN1LVkMAcZA",
+      "cargo": "Administrador de Redes",
+      "email": "carlos.santos@protectisolutions.com.br",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "ana.lima": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$c0VTRz9xI9K0O0AVAO/6DQ$0CEirPqEeLGmJO5BFFJuhooJhCtNLAB4OuFVyVF8moM",
+      "cargo": "Gerente de Projetos de TI",
+      "email": "ana.lima@protectisolutions.com.br",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "paulo.mendes": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$TKlG3xpFdMh9Dg2zCoYrHw$8kyPxcTkpO7ATiZuYP226oCcefOKf9UnJyXEiVjRDIA",
+      "cargo": "Técnico de Suporte",
+      "email": "paulo.mendes@protectisolutions.com.br",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "julianaferreira": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$F4yNqEII3q+iAdp3CU8IXQ$OLEcipjsJzk/I6S/NNLQk1Pw6ocTO3/xtNelOfg0ENM",
+      "cargo": "Especialista em Testes de Invasão",
+      "email": "juliana.ferreira@protectisolutions.com.br",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "lucassilva": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$N7FJj7BwBBxPCP6qzpntkw$OcPI3hdeCghocq/YMXM0nh9N+bKWQmO9p6LAk6X6K/c",
+      "cargo": "Gerente de Projetos ",
+      "email": "lucassilvadev@gmail.com",
+      "failed": 0,
+      "lock_until": 1757942599
+    },
+    "devmaster": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$+ZRYrxjNFyGTwkXgl+LHIw$tTsmaS5Fty1s8WHU5AhvbzeUkvqZhHlRvbERRCnLtgA",
+      "cargo": "Desenvolvedor Full Stack",
+      "email": "devmaster356@gmail.com",
       "failed": 0,
       "lock_until": 0
     }

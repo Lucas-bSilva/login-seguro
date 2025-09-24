@@ -1,58 +1,114 @@
 {
   "users": {
-    "joao.silva": {
-      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$m6JBwjjVMpWWdqtRJ3kQGg$WOYFMa0KhIw93f/svLrzxnUKIS4ainYf3VfYIdBOGKs",
+    "joao.costa": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$DmA0Ps6q5yG/aDzPncvzFw$HAseWSU4vCWF07srCazkH22o9POQ1K/xcB2WaYMY94U",
       "cargo": "Analista de Segurança da Informação",
-      "email": "joao.silva@protectisolutions.com.br",
+      "email": "joao.costa@gmail.com",
       "failed": 0,
       "lock_until": 0
     },
-    "maria.oliveira": {
-      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$1Ws0mLGLrOpDMg6ptchW9Q$F+nx0Hxex8w5heys2Owl+GI9yrVvHMQcsUMiXO+bAas",
+    "maria.souza": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$49EmsilmcptUP0PWK92qvQ$GPEfIa6OdU2AJTB3dG1BimPxaRzgWhQ5EWGKdrm36J4",
       "cargo": "Desenvolvedora Backend",
-      "email": "maria.oliveira@protectisolutions.com.br",
+      "email": "maria.souza@gmail.com",
       "failed": 0,
       "lock_until": 0
     },
-    "carlos.santos": {
-      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$TlT93IG+r2KEPDaozSMKMw$ijTcQiSElby7e3/4VlL7Iqt8a+C0OEXwnN1LVkMAcZA",
+    "carlos.silva": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$h/m9IRVP3vumFfWvCbmyYQ$Elt/wmGr9sfvISC7cMy1R//KBubzfREXH5nvcizlNMw",
       "cargo": "Administrador de Redes",
-      "email": "carlos.santos@protectisolutions.com.br",
+      "email": "carlos.silva@gmail.com",
       "failed": 0,
       "lock_until": 0
     },
-    "ana.lima": {
-      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$c0VTRz9xI9K0O0AVAO/6DQ$0CEirPqEeLGmJO5BFFJuhooJhCtNLAB4OuFVyVF8moM",
+    "ana.martins": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$ZbwcfSg21+GwicoSQMvz3A$uUYFYkQYBAth/r79OC/V+GPC6+VnI67+W+q6vARl4+8",
       "cargo": "Gerente de Projetos de TI",
-      "email": "ana.lima@protectisolutions.com.br",
+      "email": "ana.martins@gmail.com",
       "failed": 0,
       "lock_until": 0
     },
-    "paulo.mendes": {
-      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$TKlG3xpFdMh9Dg2zCoYrHw$8kyPxcTkpO7ATiZuYP226oCcefOKf9UnJyXEiVjRDIA",
+    "paulo.almeida": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$p9Gc+dsjsQGMk+Ut8rlSpA$NVxXK7ZCr1WgxaBIFGOgxP2uAzFDIJhhaiIW3YRZYBw",
       "cargo": "Técnico de Suporte",
-      "email": "paulo.mendes@protectisolutions.com.br",
+      "email": "paulo.almeida@gmail.com",
       "failed": 0,
       "lock_until": 0
     },
-    "julianaferreira": {
-      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$F4yNqEII3q+iAdp3CU8IXQ$OLEcipjsJzk/I6S/NNLQk1Pw6ocTO3/xtNelOfg0ENM",
+    "juliana.lopes": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$XBb9Li/ME/Wo49PPa5rX9Q$xIa6e+QMmjNa3dVnZRqWNhrb1itfWeFnxHJeYODzzGA",
       "cargo": "Especialista em Testes de Invasão",
-      "email": "juliana.ferreira@protectisolutions.com.br",
+      "email": "juliana.lopes@gmail.com",
       "failed": 0,
       "lock_until": 0
     },
-    "lucassilva": {
-      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$N7FJj7BwBBxPCP6qzpntkw$OcPI3hdeCghocq/YMXM0nh9N+bKWQmO9p6LAk6X6K/c",
-      "cargo": "Gerente de Projetos ",
-      "email": "lucassilvadev@gmail.com",
-      "failed": 0,
-      "lock_until": 1757942599
-    },
-    "devmaster": {
-      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$+ZRYrxjNFyGTwkXgl+LHIw$tTsmaS5Fty1s8WHU5AhvbzeUkvqZhHlRvbERRCnLtgA",
+    "ricardo.oliveira": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$FZ9uVdyeSY0PdDsbBZlWDQ$Lqep20cYZql8f7IYMrWqTbbN3xLeU+ADQnG12SWXrLM",
       "cargo": "Desenvolvedor Full Stack",
-      "email": "devmaster356@gmail.com",
+      "email": "ricardo.oliveira@gmail.com",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "fernanda.dias": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$BMl5CggljsoiiqlJ1/POrg$P5HEMC8qTZEsNr3IBxk6Y3TVvMs1CfodYv8IfaUCTZE",
+      "cargo": "UX/UI Designer",
+      "email": "fernanda.dias@gmail.com",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "bruno.santos": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$Vi6SXCt9q8mLweeLLTLJEw$bsU3ut78cVqkfkekP6xDN5rWDlCXCKCBxs6RBnvpO9s",
+      "cargo": "Engenheiro de Software",
+      "email": "bruno.santos@gmail.com",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "larissa.mendes": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$kIX/KoZ9/FgEn/fUykYIdw$AVY46RSeWLdbj99bQr2UcgbqiE6ShW3Ra5wNN6QHf30",
+      "cargo": "Analista de Banco de Dados",
+      "email": "larissa.mendes@gmail.com",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "thiago.costa": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$aoPNozX/p8Ck3c1TZn4h2A$O+FyoCJWwRcvR84iZsJP6skMUYtXmjwiRYzMaSlKqXM",
+      "cargo": "Scrum Master",
+      "email": "thiago.costa@gmail.com",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "natalia.ferreira": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$yEAzeDrZIOFjFWrUSgQ6bA$j7AafIOdA3cVnLAoQSQO3a/EB0AwHtruziiGRpnxSas",
+      "cargo": "Desenvolvedora Frontend",
+      "email": "natalia.ferreira@gmail.com",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "gabriel.pereira": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$uBR4Txst3trvz+2SlFFixQ$4PZGxxjhGIEvZyrD24+8wdKLsfQhpRQ0dBg5Nlaf/ts",
+      "cargo": "Especialista em Cloud",
+      "email": "gabriel.pereira@gmail.com",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "aline.silveira": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$yY9acBolw4P29Cb8dYFQ5Q$1ST81CydY2/oLeMF6HxPJ2jXDaamx+Tb/DzFxMchqC0",
+      "cargo": "Analista de Infraestrutura",
+      "email": "aline.silveira@gmail.com",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "felipe.martins": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$hz4Q5BV9ZYIIZkK9wlmxhw$aUHN4MboW8opEgt+vYuXA5MHklqCYM8OGGDRAsCX1GQ",
+      "cargo": "Consultor em Segurança de TI",
+      "email": "felipe.martins@gmail.com",
+      "failed": 0,
+      "lock_until": 0
+    },
+    "lucas.silva": {
+      "password_hash": "$argon2id$v=19$m=51200,t=2,p=2$+6w2ZL4A4S3W1au3C5j8pQ$Vu+rTjDMEk8VUD/5i4aneXhXPuklKFjfcV1VAokwjOM",
+      "cargo": "Analista de Segurança da Informação",
+      "email": "lucas.silva@gmail.com",
       "failed": 0,
       "lock_until": 0
     }

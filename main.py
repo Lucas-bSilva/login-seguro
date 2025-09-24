@@ -5,7 +5,7 @@ Projeto: Login Seguro – Sistema de Autenticação de Usuários
 
 Este projeto é um exemplo prático de sistema de autenticação 
 desenvolvido em Python, simulando um ambiente profissional, 
-como o cadastro e gerenciamento de funcionários de uma 
+de cadastro e gerenciamento de funcionários de uma 
 empresa de TI (por exemplo, a ProtecTI Solutions).
 
 O sistema implementa:

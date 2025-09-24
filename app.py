@@ -11,7 +11,7 @@ from storage import (
 
 # Configurações globais do sistema de login
 MAX_ATTEMPTS = 3   # número máximo de tentativas falhas antes de bloquear o login
-LOCK_SECONDS = 30  # tempo de bloqueio (em segundos) após atingir o limite de falhas
+LOCK_SECONDS = 10  # tempo de bloqueio (em segundos) após atingir o limite de falhas
 
 def register_user(username: str, password: str, cargo: str, email: str):
     """

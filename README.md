@@ -1,4 +1,4 @@
-📖 Descrição
+## Descrição
 
 O Login Seguro é um sistema de autenticação de usuários desenvolvido em Python, como parte da disciplina de Segurança Computacional.
 
@@ -14,7 +14,7 @@ Exibição opcional das senhas criptografadas (hashes), apenas para fins de demo
 
 O sistema oferece um menu interativo no terminal, identificado pelo nome fictício da empresa “Soluções em Segurança da Informação”, permitindo o gerenciamento de usuários de forma simples e segura.
 
-⚙️ Requisitos
+## Requisitos
 
 Python 3.10+
 
@@ -26,13 +26,13 @@ bcrypt
 
 colorama
 
-📦 Instalação
+## Instalação
 
 Na raiz do projeto, execute:
 
 pip install -r requirements.txt
 
-▶️ Como executar
+## Como executar
 
 No terminal, dentro da pasta do projeto, rode:
 
@@ -51,7 +51,7 @@ Será exibido o menu interativo:
 7. Mostrar senhas criptografadas
 8. Sair
 
-🛠️ Funcionalidades
+## Funcionalidades
 1. Registrar usuário
 
 Cria um novo cadastro, incluindo nome, cargo e senha.
@@ -88,7 +88,7 @@ Exibe os hashes das senhas cadastradas (apenas para fins de estudo e demonstraç
 
 Encerra a execução do sistema.
 
-📂 Estrutura do projeto
+## Estrutura do projeto
 login-seguro/
 │-- app.py             # Funções principais (cadastro, login, senha, exclusão, listagem, hashes)
 │-- security.py        # Hashing e verificação de senhas (Argon2/Bcrypt)
